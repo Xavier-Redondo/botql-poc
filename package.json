@@ -1,0 +1,24 @@
+{
+  "name": "botql-poc",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "description": "An experiment",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "nodemon --inspect --inspect-port=4445 -r dotenv/config src/index.js"
+  },
+  "dependencies": {
+    "graphql-yoga": "^1.8.5",
+    "prisma-binding": "^1.5.17"
+  },
+  "devDependencies": {
+    "dotenv": "^5.0.1",
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-plugin-import": "^2.11.0",
+    "nodemon": "^1.17.3",
+    "prettier": "^1.12.0"
+  }
+}

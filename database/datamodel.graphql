@@ -1,0 +1,23 @@
+type User {
+  id: ID! @unique
+  company: String!
+  firstName: String!
+  lastName: String!
+  username: String! @unique
+  email: String! @unique
+  bots: [Bot!]!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+}
+
+type Bot {
+  id: ID! @unique
+  name: String! @unique
+  key: String!
+  description: String
+  defaultLocale: String
+  status: String
+  owner: User!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+}
