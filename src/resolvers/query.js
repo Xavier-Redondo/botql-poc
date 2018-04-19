@@ -8,7 +8,22 @@ const fakeUser = {
 };
 
 const login = async (root, args, context, info) => {
-  return fakeUser;
+  const where = {
+    username: args.username
+  };
+  const user = await context.db.query.user({ where });
+
+  const bots = await context.db.query.bots({
+    where: {
+      owner: {
+        username: args.username
+      }
+    }
+  });
+
+  user.bots = bots;
+
+  return user;
 };
 
 module.exports = {

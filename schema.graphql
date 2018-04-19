@@ -1,3 +1,5 @@
+# import Bot, User from "./generated/prisma.graphql"
+
 type Query {
   login(username: String!): User
 }
@@ -10,24 +12,31 @@ type Mutation {
     username: String!
     email: String!
   ): User
+  createBot(
+    name: String!
+    key: String!
+    description: String
+    defaultLocale: String
+    ownerId: ID!
+  ): Bot
 }
 
-type User {
-  id: ID!
-  company: String!
-  firstName: String!
-  lastName: String!
-  username: String!
-  email: String!
-  bots: [Bot]
-}
+# type User {
+#   id: ID!
+#   company: String!
+#   firstName: String!
+#   lastName: String!
+#   username: String!
+#   email: String!
+#   bots: [Bot]
+# }
 
-type Bot {
-  id: ID!
-  name: String!
-  key: String!
-  description: String
-  defaultLocale: String
-  status: String
-  owner: User!
-}
+# type Bot {
+#   id: ID!
+#   name: String!
+#   key: String!
+#   description: String
+#   defaultLocale: String
+#   status: String
+#   owner: User!
+# }
